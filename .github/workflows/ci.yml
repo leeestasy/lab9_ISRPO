@@ -2,7 +2,7 @@ name: Sequential Workflow
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -14,7 +14,7 @@ jobs:
         run: dotnet build UnitTestProject1.csproj
   test:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
