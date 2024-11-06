@@ -9,7 +9,9 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0.x' 
+      - name: Restore NuGet packages
+        run: dotnet restore UnitTestProject1.csproj
       - name: Build project
         run: dotnet build UnitTestProject1.csproj
   test:
